@@ -2,16 +2,44 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
+import * as serviceWorker from './serviceWorker';
+import { BrowserRouter } from 'react-router-dom';
+import 'react-mdl/extra/material.css';
+import 'react-mdl/extra/material.js';
+import Popup from "reactjs-popup";
+import BurgerIcon from "./components/burger-icon";
+import Menu from "./components/menu";
+
+const styles = {
+  fontFamily: "sans-serif",
+  textAlign: "center",
+};
+const contentStyle = {
+  background: "rgba(255,255,255,0",
+  width: "80%",
+  border: "none"
+};
+
 
 ReactDOM.render(
-  <React.StrictMode>
+  <BrowserRouter>
+    <div style={styles}>
+      <Popup
+        modal
+        overlayStyle={{ backgroundColor: 'black' }}
+        contentStyle={contentStyle}
+        closeOnDocumentClick={false}
+        trigger={open => <BurgerIcon open={open} />}
+      >
+        {close => <Menu close={close} />}
+      </Popup>
+    </div>
     <App />
-  </React.StrictMode>,
+  </BrowserRouter>,
   document.getElementById('root')
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+// If you want your app to work offline and load faster, you can change
+// unregister() to register() below. Note this comes with some pitfalls.
+// Learn more about service workers: https://bit.ly/CRA-PWA
+serviceWorker.unregister();
