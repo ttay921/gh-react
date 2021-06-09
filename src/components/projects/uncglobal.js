@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Grid, Cell, Button } from 'react-mdl'
 import Map from '../images/global/map.png'
 import Nation from '../images/global/nations.png'
-import photoAni from '../images/global/PhotoStory.gif'
+
 
 
 class UNCGlobal extends Component {
@@ -27,9 +27,7 @@ class UNCGlobal extends Component {
                     </Cell>
 
 
-                    <Cell col={10} offset={1} tablet={8} offsetTablet={2} phone={8} offsetPhone={2}>
-                        <img className="project-image" src={photoAni} alt="Story Animations" />
-                    </Cell>
+                   
                     <Cell col={10} offset={1} tablet={8} offsetTablet={2} phone={8} offsetPhone={2}>
                         <p className="project-role animated fadeInUp delay-1s">
                             I worked virtually alongside Meg Mcmahon to build the photo stories framework. Using ScrollMagic, and GSAP, I built out the photo story elements that Meg then incorporated into the Hugo site.
